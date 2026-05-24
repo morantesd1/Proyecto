@@ -72,19 +72,19 @@ body {
 
     /* Todas las imágenes ocupan el mismo espacio */
     .slider img {
-      position: absolute;
+      position: absolute; /*Coloca todas las imágenes una encima de la otra, así, cuando una desaparezca vemos la que está justo detrás.*/
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      animation: slide 32s infinite;
+      object-fit: cover; /*Asegura que las imágenes llenen por completo el contenedor*/
+      opacity: 0; /*todas las imágenes arrancan invisibles. Solo se verán cuando la animación se lo ordene.*/
+      animation: slide 32s infinite; /*todo el ciclo dura 32 segundos y que se repetirá infinitamente.*/
     }
 
     /* Cada imagen con su delay */
     .slider img:nth-child(1) { animation-delay: 0s; }
-    .slider img:nth-child(2) { animation-delay: 4s; }
-    .slider img:nth-child(3) { animation-delay: 8s; }
-    .slider img:nth-child(4) { animation-delay: 12s; }
+    .slider img:nth-child(2) { animation-delay: 4s; } 
+    .slider img:nth-child(3) { animation-delay: 8s; } 
+    .slider img:nth-child(4) { animation-delay: 12s; } 
     .slider img:nth-child(5) { animation-delay: 16s; }
     .slider img:nth-child(6) { animation-delay: 20s; }
     .slider img:nth-child(7) { animation-delay: 24s; }
@@ -92,11 +92,11 @@ body {
 
     /* Animación para aparecer y desaparecer */
     @keyframes slide {
-      0% { opacity: 0; }
-      8% { opacity: 1; }
-      12% { opacity: 1; }
-      20% { opacity: 0; }
-      100% { opacity: 0; }
+      0% { opacity: 0; } /*(Inicio): La imagen es invisible*/
+      8% { opacity: 1; } /*(A los 2.5 segundos): La imagen llega a su brillo total. Ha tardado un 8% del tiempo en aparecer*/
+      12% { opacity: 1; } /*(A los 3.8 segundos): Se mantiene visible*/
+      20% { opacity: 0; } /*Se vuelve invisible otra vez*/
+      100% { opacity: 0; } /*Se mantiene invisible para que se muestren las otras imagenes*/
     }
 
 /*Informacion*/
